@@ -216,6 +216,36 @@ section { padding-block: clamp(56px, 9vw, 104px); }
 .cta-band p { color: var(--cream-dim); font-size: 17px; margin: 12px auto 28px; max-width: 48ch; }
 .cta-band .stores { justify-content: center; }
 
+/* Flusso beta / closed testing */
+.beta-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 30px; }
+
+.note-warn {
+  display: flex; gap: 14px; align-items: flex-start; text-align: left;
+  background: rgba(232,0,58,.10); border: 1px solid rgba(232,0,58,.38);
+  border-radius: 14px; padding: 18px 20px; margin: 0 auto 30px; max-width: 720px;
+}
+.note-warn svg { flex: none; width: 24px; height: 24px; stroke: var(--crimson); fill: none; }
+.note-warn p { margin: 0; color: var(--cream-dim); font-size: 15px; }
+.note-warn b { color: var(--cream); }
+
+.steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+  gap: 18px; text-align: left; margin-top: 6px;
+}
+.step {
+  position: relative; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 26px;
+}
+.step .num {
+  width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center;
+  font-family: var(--serif); font-weight: 700; font-size: 18px; color: #1a0d02;
+  background: linear-gradient(135deg, var(--gold), var(--primary)); margin-bottom: 14px;
+}
+.step h3 { font-size: 19px; }
+.step p { color: var(--cream-dim); font-size: 15px; margin: 8px 0 18px; }
+
+.beta-fallback { margin-top: 28px; color: var(--cream-faint); font-size: 14px; text-align: center; }
+
 /* ---------- News ---------- */
 .news-list { display: flex; flex-direction: column; gap: 20px; max-width: 760px; margin-inline: auto; }
 .post {
@@ -249,8 +279,7 @@ section { padding-block: clamp(56px, 9vw, 104px); }
 @media (max-width: 860px) {
   .hero .container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
   .hero .sub { margin-inline: auto; }
-  .hero .stores, .hero .eyebrow { justify-content: center; }
-  .hero .stores { justify-content: center; }
+  .hero .beta-cta, .hero .eyebrow { justify-content: center; }
   .phone-wrap { order: -1; }
   .nav { display: none; }
 }
