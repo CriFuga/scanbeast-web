@@ -60,8 +60,8 @@
       </div>
 
       <div class="phone-wrap">
-        <div class="phone">
-          <img src="assets/img/shot-1.webp" alt="ScanBeast home screen with the central Scan button" width="720" height="1600">
+        <div class="phone" id="phone">
+          <img class="phone-shot active" src="assets/img/shot-1.webp" alt="ScanBeast home screen with the central Scan button" width="720" height="1600">
         </div>
       </div>
     </div>
@@ -216,6 +216,14 @@
       <p class="copy">Made by fugush · © 2026 ScanBeast · v1.4.0</p>
     </div>
   </footer>
+
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+    <button class="lb-close" type="button" aria-label="Close">&times;</button>
+    <button class="lb-prev" type="button" aria-label="Previous">&lsaquo;</button>
+    <img class="lb-img" alt="">
+    <button class="lb-next" type="button" aria-label="Next">&rsaquo;</button>
+  </div>
 
   <script src="assets/js/app.js"></script>
 </body>

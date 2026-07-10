@@ -147,6 +147,18 @@
     var PRE = ["Em", "Char", "Pyro", "Aqua", "Terra", "Gale", "Fer", "Vol", "Cryo", "Glim", "Umbra", "Bram", "Scor", "Vex", "Nix", "Zeph", "Ob", "Kra"];
     var SUF = ["fang", "maw", "scale", "horn", "wing", "tail", "claw", "bane", "thorn", "gale", "drift", "shard", "husk", "brand", "crest", "spire"];
     var NUTRI = [["A", "#1e8f3e"], ["B", "#5db500"], ["C", "#f2c200"], ["D", "#f28c00"], ["E", "#e8003a"]];
+    // Rarita' pesata: estratta dallo stesso PRNG, quindi deterministica sul barcode.
+    var RARITY = [
+      { key: "common",    name: "Common",    color: "#9aa0aa", p: 0.55 },
+      { key: "rare",      name: "Rare",      color: "#3aa0ff", p: 0.28 },
+      { key: "epic",      name: "Epic",      color: "#b45cff", p: 0.13 },
+      { key: "legendary", name: "Legendary", color: "#ffcc00", p: 0.04 }
+    ];
+    function rollRarity(r) {
+      var x = r(), acc = 0;
+      for (var i = 0; i < RARITY.length; i++) { acc += RARITY[i].p; if (x < acc) return RARITY[i]; }
+      return RARITY[0];
+    }
 
     // Hash deterministico (FNV-1a 32-bit): stesso barcode -> stessa beast.
     function hash(s) {
@@ -184,6 +196,7 @@
         name: pick(r, PRE) + pick(r, SUF),
         stats: { HP: randInt(r, 60, 150), ATK: randInt(r, 30, 99), DEF: randInt(r, 30, 99), SPD: randInt(r, 30, 99) },
         nutri: NUTRI[Math.floor(r() * NUTRI.length)],
+        rarity: rollRarity(r),
         code: code
       };
     }
@@ -197,12 +210,15 @@
 
     function render(b) {
       card.style.setProperty("--el", b.el.color);
+      card.style.setProperty("--rar", b.rarity.color);
+      card.setAttribute("data-rarity", b.rarity.key);
       card.innerHTML =
         '<div class="beast-head">' +
           '<div class="beast-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">' + b.el.svg + "</svg></div>" +
           "<div>" +
             '<h3 class="beast-name">' + esc(b.name) + "</h3>" +
             '<div class="beast-sub"><span class="beast-el">' + b.el.name + "</span>" +
+              '<span class="beast-rarity">' + b.rarity.name + "</span>" +
               '<span class="beast-code">#' + esc(b.code) + "</span></div>" +
           "</div>" +
         "</div>" +
@@ -228,11 +244,25 @@
       if (hint) hint.textContent = "Same barcode always forges the same beast — compare a friend's pantry.";
     }
 
+    var scanning = false;
+    // Fase "scansione": scanline per ~700ms, poi la card entra col flip.
+    function playScan(done) {
+      if (prefersReduced) { done(); return; }
+      scanning = true;
+      card.hidden = false;
+      card.removeAttribute("data-rarity");
+      card.classList.remove("show");
+      card.classList.add("scanning");
+      card.innerHTML = '<div class="scanline"></div><p class="scan-progress">Scanning…</p>';
+      window.setTimeout(function () { card.classList.remove("scanning"); scanning = false; done(); }, 700);
+    }
     function run(raw) {
+      if (scanning) return;   // ignora click ripetuti durante la scansione
       var code = (raw || "").replace(/\D/g, "").slice(0, 13);
       if (!code) code = randomBarcode();
       if (input) input.value = code;
-      render(generate(code));
+      var beast = generate(code);
+      playScan(function () { render(beast); });
     }
 
     form.addEventListener("submit", function (e) { e.preventDefault(); run(input && input.value); });
@@ -242,12 +272,76 @@
     });
   }
 
+  /* ---------- Phone hero: crossfade tra gli screenshot ---------- */
+  function initPhone() {
+    var phone = document.getElementById("phone");
+    if (!phone) return;
+    var first = phone.querySelector(".phone-shot");
+    if (!first) return;
+    var shots = ["shot-1", "shot-2", "shot-5", "shot-4", "shot-6", "shot-3"];
+    var layers = [first];
+    for (var i = 1; i < shots.length; i++) {
+      var img = document.createElement("img");
+      img.className = "phone-shot";
+      img.src = "assets/img/" + shots[i] + ".webp";
+      img.alt = ""; img.loading = "lazy"; img.width = 720; img.height = 1600;
+      phone.appendChild(img);
+      layers.push(img);
+    }
+    if (prefersReduced) return;   // resta sul primo shot
+    var idx = 0;
+    window.setInterval(function () {
+      layers[idx].classList.remove("active");
+      idx = (idx + 1) % layers.length;
+      layers[idx].classList.add("active");
+    }, 3200);
+  }
+
+  /* ---------- Gallery lightbox ---------- */
+  function initLightbox() {
+    var box = document.getElementById("lightbox");
+    var imgs = Array.prototype.slice.call(document.querySelectorAll(".gallery img"));
+    if (!box || !imgs.length) return;
+    var lbImg = box.querySelector(".lb-img");
+    var idx = 0;
+
+    function show(n) {
+      idx = (n + imgs.length) % imgs.length;
+      lbImg.src = imgs[idx].currentSrc || imgs[idx].src;
+      lbImg.alt = imgs[idx].alt || "";
+    }
+    function open(n) { show(n); box.hidden = false; box.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+    function close() { box.hidden = true; box.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
+
+    imgs.forEach(function (img, n) {
+      img.style.cursor = "zoom-in";
+      img.setAttribute("role", "button");
+      img.setAttribute("tabindex", "0");
+      img.addEventListener("click", function () { open(n); });
+      img.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(n); }
+      });
+    });
+    box.querySelector(".lb-close").addEventListener("click", close);
+    box.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); show(idx - 1); });
+    box.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); show(idx + 1); });
+    box.addEventListener("click", function (e) { if (e.target === box) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (box.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(idx - 1);
+      else if (e.key === "ArrowRight") show(idx + 1);
+    });
+  }
+
   function boot() {
     initReveal();
     initNav();
     var canvas = document.querySelector(".embers");
     if (canvas) initEmbers(canvas);
     initScan();
+    initPhone();
+    initLightbox();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
