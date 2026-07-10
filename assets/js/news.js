@@ -28,7 +28,7 @@
     }).join("");
 
     return (
-      '<article class="post">' +
+      '<article class="post reveal">' +
         '<div class="meta">' +
           '<span class="ver">v' + esc(p.ver) + "</span>" +
           '<span class="date">' + esc(p.date) + "</span>" +

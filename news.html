@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/img/logo.webp">
   <link rel="apple-touch-icon" href="assets/img/logo.webp">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('has-js');</script>
 </head>
 <body>
 
@@ -19,13 +20,17 @@
         <img src="assets/img/logo.webp" alt="ScanBeast logo">
         ScanBeast <span class="v">v1.4.0</span>
       </a>
-      <nav class="nav">
+      <nav class="nav" id="site-nav">
+        <a href="index.html#try">Try</a>
         <a href="index.html#features">Features</a>
         <a href="index.html#gallery">Gallery</a>
         <a href="news.html">News</a>
         <a href="index.html#download">Download</a>
       </nav>
       <a class="btn btn-primary header-cta" href="index.html#download">Play free</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -49,9 +54,9 @@
     <div class="container">
       <a class="brand" href="index.html"><img src="assets/img/logo.webp" alt="">ScanBeast</a>
       <nav>
+        <a href="index.html#try">Try</a>
         <a href="index.html#features">Features</a>
         <a href="news.html">News</a>
-        <a href="https://fugush.itch.io/scanbeast" target="_blank" rel="noopener">itch.io</a>
       </nav>
       <p class="copy">Made by fugush · © 2026 ScanBeast · v1.4.0</p>
     </div>
@@ -59,5 +64,6 @@
 
   <script src="assets/js/news-data.js"></script>
   <script src="assets/js/news.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

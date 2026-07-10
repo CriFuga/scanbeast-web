@@ -17,6 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('has-js');</script>
 </head>
 <body>
 
@@ -27,18 +28,23 @@
         <img src="assets/img/logo.webp" alt="ScanBeast logo">
         ScanBeast <span class="v">v1.4.0</span>
       </a>
-      <nav class="nav">
+      <nav class="nav" id="site-nav">
+        <a href="#try">Try</a>
         <a href="#features">Features</a>
         <a href="#gallery">Gallery</a>
         <a href="news.html">News</a>
         <a href="#download">Download</a>
       </nav>
       <a class="btn btn-primary header-cta" href="#download">Join the beta</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <!-- ==================== HERO ==================== -->
   <section class="hero">
+    <canvas class="embers" aria-hidden="true"></canvas>
     <div class="container">
       <div class="hero-copy">
         <span class="eyebrow">Barcode monster-battler</span>
@@ -48,12 +54,9 @@
 
         <div class="beta-cta">
           <a class="btn btn-primary" href="#download">Join the beta</a>
-          <a class="store itch" href="https://fugush.itch.io/scanbeast" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
-            <span class="txt"><small>Direct APK on</small><b>itch.io</b></span>
-          </a>
+          <a class="btn" href="#try">Try the scanner</a>
         </div>
-        <p class="fineprint">Closed beta on Google Play · direct APK on itch.io · iOS soon</p>
+        <p class="fineprint">Closed beta on Google Play · iOS soon</p>
       </div>
 
       <div class="phone-wrap">
@@ -64,16 +67,41 @@
     </div>
   </section>
 
+  <!-- ==================== TRY / SCAN DEMO ==================== -->
+  <section id="try">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Try it now</span>
+        <h2>Generate your first beast</h2>
+        <p>Every barcode forges a unique creature. Type one — or roll a random product — and meet the beast it hides.</p>
+      </div>
+
+      <div class="scan reveal">
+        <form class="scan-form" id="scan-form" novalidate>
+          <label class="scan-input">
+            <span class="scan-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M4 6v12M7.5 6v12M11 6v12M14 6v12M17 6v12M20 6v12"/></svg></span>
+            <input id="scan-code" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="13" autocomplete="off" placeholder="Enter a barcode…" aria-label="Barcode">
+          </label>
+          <button class="btn btn-primary" type="submit">Scan</button>
+          <button class="btn" type="button" id="scan-random">Random</button>
+        </form>
+
+        <div class="beast-card" id="beast-card" hidden aria-live="polite"><!-- popolata da app.js --></div>
+        <p class="scan-hint" id="scan-hint">Tip: try a real barcode from your pantry.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== FEATURES ==================== -->
   <section id="features">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">What you'll do</span>
         <h2>Every product hides a creature</h2>
         <p>Real barcodes become collectible beasts. Real nutrition becomes their power.</p>
       </div>
 
-      <div class="features-grid">
+      <div class="features-grid reveal-group">
         <div class="feature el-fire">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><path d="M7 8v8M10 8v8M13 8v8M16 8v8"/></svg></div>
           <h3>Scan &amp; capture</h3>
@@ -128,12 +156,12 @@
   <!-- ==================== GALLERY ==================== -->
   <section id="gallery">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">Screenshots</span>
         <h2>Step into the arena</h2>
       </div>
     </div>
-    <div class="gallery">
+    <div class="gallery reveal-group">
       <img src="assets/img/shot-1.webp" alt="Home screen with Scan button" loading="lazy">
       <img src="assets/img/shot-2.webp" alt="Battle — choose your champion" loading="lazy">
       <img src="assets/img/shot-5.webp" alt="Bestiary book" loading="lazy">
@@ -147,7 +175,7 @@
   <!-- ==================== DOWNLOAD CTA ==================== -->
   <section id="download" class="cta-band">
     <div class="container">
-      <div class="box">
+      <div class="box reveal">
         <h2>Join the closed beta</h2>
         <p>ScanBeast is in closed testing on Google Play. Two quick steps and you're in.</p>
 
@@ -156,7 +184,7 @@
           <p><b>Use one Google account for everything.</b> The account that joins the group must be the same one signed into the Play Store on your phone. Different accounts and Google won't let you download.</p>
         </div>
 
-        <div class="steps">
+        <div class="steps reveal-group">
           <div class="step">
             <div class="num">1</div>
             <h3>Join the testers group</h3>
@@ -171,7 +199,7 @@
           </div>
         </div>
 
-        <p class="beta-fallback">No Google account for testing? Grab the direct APK on <a href="https://fugush.itch.io/scanbeast" target="_blank" rel="noopener">itch.io</a> — no group needed. iOS coming soon.</p>
+        <p class="beta-fallback">On iPhone? The iOS build is coming soon.</p>
       </div>
     </div>
   </section>
@@ -181,13 +209,14 @@
     <div class="container">
       <a class="brand" href="index.html"><img src="assets/img/logo.webp" alt="">ScanBeast</a>
       <nav>
+        <a href="#try">Try</a>
         <a href="#features">Features</a>
         <a href="news.html">News</a>
-        <a href="https://fugush.itch.io/scanbeast" target="_blank" rel="noopener">itch.io</a>
       </nav>
       <p class="copy">Made by fugush · © 2026 ScanBeast · v1.4.0</p>
     </div>
   </footer>
 
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
