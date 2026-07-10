@@ -12,6 +12,18 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.5.0",
+    date: "10 Jul 2026",
+    title: "Chat with friends & a fresh new look",
+    items: [
+      "Direct messages: chat privately with your friends, right inside the app.",
+      "Redesigned home menu, cleaner navigation and a card-style shop with new battle items.",
+      "Server-side username filter for a healthier community.",
+      "Smoother animations and lots of fixes under the hood."
+    ],
+    tags: ["Chat", "Redesign", "Polish"]
+  },
+  {
     ver: "1.4.0",
     date: "10 Jul 2026",
     title: "Trade cards with your friends",
