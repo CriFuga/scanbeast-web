@@ -243,6 +243,16 @@ section { padding-block: clamp(56px, 9vw, 104px); }
 .note-warn svg { flex: none; width: 24px; height: 24px; stroke: var(--crimson); fill: none; }
 .note-warn p { margin: 0; color: var(--cream-dim); font-size: 15px; }
 .note-warn b { color: var(--cream); }
+/* Desktop: callout centrato e bilanciato (icona sopra, testo centrato, box più
+   stretto). Su mobile (<=860px) resta icona a sinistra + testo a sinistra. */
+@media (min-width: 861px) {
+  .note-warn {
+    flex-direction: column; align-items: center; text-align: center;
+    gap: 10px; max-width: 580px; padding: 22px 30px;
+  }
+  .note-warn svg { width: 28px; height: 28px; }
+  .note-warn p { max-width: 52ch; line-height: 1.5; }
+}
 
 .steps {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
@@ -294,6 +304,29 @@ section { padding-block: clamp(56px, 9vw, 104px); }
 .page-hero { text-align: center; padding-top: clamp(48px, 8vw, 88px); padding-bottom: 8px; }
 .page-hero h1 { font-size: clamp(32px, 6vw, 52px); background: linear-gradient(120deg, var(--gold), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .page-hero p { color: var(--cream-dim); margin-top: 12px; }
+
+/* ---------- Legal / prose (privacy policy) ---------- */
+.legal { max-width: 780px; margin-inline: auto; padding-bottom: 40px; }
+.legal .updated { color: var(--cream-faint); font-size: 14px; margin: 0 0 8px; }
+.legal .lead {
+  font-size: 17px; color: var(--cream);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px 20px; margin: 22px 0 8px;
+}
+.legal h2 {
+  font-size: 22px; margin: 40px 0 12px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border); color: var(--cream);
+}
+.legal h3 {
+  font-family: var(--sans); font-weight: 700; font-size: 16px;
+  color: var(--accent); margin: 22px 0 4px;
+}
+.legal p { color: var(--cream-dim); margin: 10px 0; }
+.legal ul { color: var(--cream-dim); margin: 10px 0; padding-left: 22px; }
+.legal li { margin: 7px 0; }
+.legal strong { color: var(--cream); }
+.legal a { color: var(--accent); }
+.legal a:hover { color: var(--gold); }
 
 /* ---------- Motion: scroll reveal ---------- */
 /* Nascosto solo quando il JS e' attivo: senza JS il contenuto resta visibile. */
