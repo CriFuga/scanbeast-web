@@ -12,6 +12,38 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.6.4",
+    date: "13 Jul 2026",
+    title: "Notifications your way",
+    items: [
+      "Pick exactly which push alerts you receive — duels, trades, messages and friend requests — from the newly reorganised Settings.",
+      "No more double notifications: with the app open you get a single in-app heads-up instead of a duplicate system notification.",
+      "A small dot now flags pending friend requests and unread messages on the home menu and the leaderboard."
+    ],
+    tags: ["Notifications", "Settings"]
+  },
+  {
+    ver: "1.6.3",
+    date: "13 Jul 2026",
+    title: "New shop, chests & card frames",
+    items: [
+      "Revamped shop with coin chests and an animated reveal — unbox items, essence and rare beasts.",
+      "Cosmetic card frames: unlock silver, emerald, ruby, gold and even animated borders in the new Style tab.",
+      "Boss of the day: a shared daily challenge with a free rare chest when you beat it.",
+      "Fairer PvP — opponents matched by evolution stage, speed decides who strikes first, plus anti-farm tweaks and new missions."
+    ],
+    tags: ["Shop", "Cosmetics", "Balance"]
+  },
+  {
+    ver: "1.6.2",
+    date: "13 Jul 2026",
+    title: "Security hardening",
+    items: [
+      "App Check enforcement is now live, protecting online play and the leaderboard from tampering."
+    ],
+    tags: ["Security"]
+  },
+  {
     ver: "1.6.1",
     date: "13 Jul 2026",
     title: "Smoother updates & safer accounts",
