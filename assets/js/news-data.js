@@ -12,6 +12,28 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.6.1",
+    date: "13 Jul 2026",
+    title: "Smoother updates & safer accounts",
+    items: [
+      "Returning players get a quick feedback prompt on update instead of replaying the whole tutorial.",
+      "The 'Rate ScanBeast' button now reliably opens the Play Store listing.",
+      "Sturdier account handling: if your online profile is ever reset, the app guides you back in — your local collection stays safe."
+    ],
+    tags: ["Updates", "Accounts", "Fixes"]
+  },
+  {
+    ver: "1.6.0",
+    date: "13 Jul 2026",
+    title: "A full guided tutorial",
+    items: [
+      "Brand-new guided tutorial that walks you through every part of the game — scanning, health & Nutri-Score, evolution, battles, the coin economy, contributing missing products, trading, messages and languages.",
+      "Existing players get the refreshed tutorial too, so the newer features don't go unnoticed.",
+      "Optional, privacy-first usage analytics: off by default — you're always in control."
+    ],
+    tags: ["Tutorial", "Privacy"]
+  },
+  {
     ver: "1.5.0",
     date: "10 Jul 2026",
     title: "Chat with friends & a fresh new look",
