@@ -34,6 +34,18 @@ window.SCANBEAST_NEWS = [
     tags: ["Tutorial", "Privacy"]
   },
   {
+    ver: "1.5.1",
+    date: "12 Jul 2026",
+    title: "Speak your language & sharper scanning",
+    items: [
+      "ScanBeast now speaks 6 languages: English, Italian, Portuguese, Spanish, French and German.",
+      "Much better barcode scanning — faster, and it reads more barcode types.",
+      "Push notifications now arrive in your language.",
+      "Product not in the database? Generate a mystery beast or help add it to Open Food Facts."
+    ],
+    tags: ["Languages", "Scanning"]
+  },
+  {
     ver: "1.5.0",
     date: "10 Jul 2026",
     title: "Chat with friends & a fresh new look",
