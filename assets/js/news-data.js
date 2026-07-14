@@ -12,6 +12,17 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.7.0",
+    date: "14 Jul 2026",
+    title: "Optional rewards, more coins",
+    items: [
+      "Watch a short optional ad to boost your run — bonus shop coins, double a battle's XP and coins, or a free daily chest on the home screen.",
+      "Ads are always optional and reward-only: nothing interrupts play, you choose when to watch.",
+      "Battle coins now scale with your opponent — tougher enemies and bosses pay out more."
+    ],
+    tags: ["Rewards", "Coins", "Ads"]
+  },
+  {
     ver: "1.6.4",
     date: "13 Jul 2026",
     title: "Notifications your way",
