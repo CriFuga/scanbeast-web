@@ -12,6 +12,17 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.7.1",
+    date: "14 Jul 2026",
+    title: "Fixes & smoother contributing",
+    items: [
+      "Fixed an issue from the previous update that could show your name twice on the leaderboard or ask you to set it again — your progress is safe.",
+      "Product not on Open Food Facts yet? We now open the OFF app so you can add it and get an accurate card.",
+      "More reliable accounts plus a batch of stability fixes under the hood."
+    ],
+    tags: ["Fixes", "Reliability"]
+  },
+  {
     ver: "1.7.0",
     date: "14 Jul 2026",
     title: "Optional rewards, more coins",
