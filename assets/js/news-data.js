@@ -12,6 +12,17 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.8.0",
+    date: "15 Jul 2026",
+    title: "Season Pass & guided onboarding",
+    items: [
+      "New Season Pass: play to earn XP and unlock 25 tiers of free rewards — coins, essence and chests. A fresh season every 30 days.",
+      "A guided tutorial walks new hunters through their first scan and first battle, with a welcome gift at the end.",
+      "Interface adapted to notch and punch-hole displays, plus various fixes and improvements."
+    ],
+    tags: ["Season Pass", "Onboarding"]
+  },
+  {
     ver: "1.7.1",
     date: "14 Jul 2026",
     title: "Fixes & smoother contributing",
