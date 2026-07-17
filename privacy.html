@@ -49,7 +49,7 @@
     <div class="container">
       <article class="legal">
 
-        <p class="updated">Last updated: 14 July 2026</p>
+        <p class="updated">Last updated: 17 July 2026</p>
 
         <p class="lead"><strong>The short version:</strong> ScanBeast never sells or rents your data. The only ads are <strong>optional rewarded ads you choose to watch</strong> for in-game rewards — there are no forced, interstitial or banner ads. Ads are served by Google AdMob, and in the EEA/UK/Switzerland you’re asked for ad consent first. Anonymous usage analytics are <strong>off by default</strong> and only turn on if you tap “Accept” — you can switch them off anytime in Settings.</p>
 
@@ -77,6 +77,9 @@
         <h3>Anonymous usage analytics — optional, opt-in</h3>
         <p>To understand how to improve the game, we can collect <strong>anonymous</strong> usage statistics through Google Firebase Analytics: which screens are visited, app version, device type and country. This is <strong>disabled by default</strong>. It only starts if you explicitly accept the consent request shown in the app, and you can turn it off again at any time from <strong>Settings → Privacy</strong>. We do not use it for advertising and it carries no advertising identifier.</p>
 
+        <h3>Website analytics — this site</h3>
+        <p>This website (the pages you are reading right now) uses <strong>Cloudflare Web Analytics</strong> to count aggregate page views and visits. It is <strong>cookieless</strong>, sets no identifiers on your device and does <strong>not</strong> track you across other websites. Only anonymous, aggregate metrics are collected (page URL, referrer, country, browser and device type) — no personal data, and nothing is sold. This is separate from, and independent of, the app’s opt-in Firebase Analytics described above. See Cloudflare’s <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Web Analytics</a> and <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">privacy policy</a>.</p>
+
         <h3>Advertising — optional rewarded ads (Google AdMob)</h3>
         <p>ScanBeast offers <strong>rewarded ads</strong>: short video ads you can <strong>choose</strong> to watch in exchange for in-game rewards (coins, a bonus after a battle, or a free daily chest). They are always optional — the game is fully playable without watching any ad, and there are no forced, interstitial or banner ads. Ads are served by <strong>Google AdMob</strong>. To show them, AdMob may process your device’s <strong>advertising identifier</strong> along with technical device and usage information, and shares this with Google as the ad provider. In the European Economic Area, the UK and Switzerland, Google’s <strong>consent request (User Messaging Platform)</strong> is shown before any ad is requested; if you decline personalised ads, you receive <strong>non-personalised</strong> ads instead. You can limit or reset ad personalisation at any time from your device’s Google ad settings (Android: <strong>Settings → Google → Ads</strong>).</p>
 
@@ -97,6 +100,7 @@
           <li><strong>Google Firebase</strong> (Authentication, Realtime Database, Firestore, Cloud Messaging, Analytics, App Check) — hosts online accounts, profiles, social features and, if enabled, analytics. See Google’s <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
           <li><strong>Google AdMob</strong> — serves the optional rewarded ads, together with Google’s User Messaging Platform for ad consent. See Google’s <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob &amp; privacy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
           <li><strong>Open Food Facts</strong> — supplies product data for scanned barcodes. See their <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">privacy policy</a>.</li>
+          <li><strong>Cloudflare Web Analytics</strong> — provides cookieless, privacy-first visitor statistics for this website only (no cookies, no cross-site tracking, no personal data). See Cloudflare’s <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">privacy policy</a>.</li>
         </ul>
         <p>Data may be processed on Google servers outside your country under Google’s standard data-protection safeguards.</p>
 
@@ -150,5 +154,9 @@
   </footer>
 
   <script src="assets/js/app.js"></script>
+
+  <!-- Cloudflare Web Analytics (cookieless, privacy-first) -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "66f2514d06d64d0d81da3c510b61e948"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>

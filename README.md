@@ -1,7 +1,7 @@
 # ScanBeast — website
 
 Static promo site + devlog for **ScanBeast**, the barcode monster-battler.
-No build step, no framework, no external requests — plain HTML/CSS/JS, safe to host on GitHub Pages.
+No build step, no framework — plain HTML/CSS/JS, safe to host on GitHub Pages. The only external request is a privacy-first, cookieless Cloudflare Web Analytics beacon (visitor counts; no cookies, no personal data).
 
 ## Structure
 
