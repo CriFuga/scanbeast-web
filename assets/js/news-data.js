@@ -12,6 +12,36 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.8.5",
+    date: "25 Jul 2026",
+    title: "Ready for the newest Android",
+    items: [
+      "Updated for the latest Android versions, so ScanBeast stays smooth and stable on every phone.",
+      "Small under-the-hood fixes and improvements."
+    ],
+    tags: ["Compatibility"]
+  },
+  {
+    ver: "1.8.4",
+    date: "18 Jul 2026",
+    title: "Friend request & language fixes",
+    items: [
+      "Fixed friend requests that could get stuck and refuse to be accepted — they now clear correctly.",
+      "Corrected a few menu labels that could show up in the wrong language."
+    ],
+    tags: ["Friends", "Fixes"]
+  },
+  {
+    ver: "1.8.2",
+    date: "17 Jul 2026",
+    title: "Mystery beasts, properly named",
+    items: [
+      "Beasts from unknown products now always get a proper name, shown in your language — no more blank cards.",
+      "Steadier scanning: a brief warm-up when the scanner opens avoids the occasional misread."
+    ],
+    tags: ["Scanning", "Polish"]
+  },
+  {
     ver: "1.8.0",
     date: "15 Jul 2026",
     title: "Season Pass & guided onboarding",
