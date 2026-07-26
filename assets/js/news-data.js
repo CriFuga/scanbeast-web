@@ -12,6 +12,30 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "1.9.3",
+    date: "26 Jul 2026",
+    title: "Clan social upgrade",
+    items: [
+      "Get notified the moment someone asks to join your clan — even with the app closed — and the request goes straight to the leader.",
+      "Browse every clan and the leaderboard from inside your own clan, and edit your clan's name, flag and who can join.",
+      "If the leader goes quiet for too long, leadership passes automatically to the most active member — no clan left stuck.",
+      "Removed from a clan? You'll know right away, with a heads-up notification."
+    ],
+    tags: ["Clans", "Notifications"]
+  },
+  {
+    ver: "1.9.0",
+    date: "26 Jul 2026",
+    title: "Clans have arrived",
+    items: [
+      "Found or join a clan, team up and climb the clan leaderboard by earning XP together.",
+      "Every clan gets its own group chat to plan, brag and rally the troops.",
+      "Your very first clan is free — go raise your banner.",
+      "Choose a name, tag, flag and who can join: open, on request, or invite-only."
+    ],
+    tags: ["Clans", "Social"]
+  },
+  {
     ver: "1.8.5",
     date: "25 Jul 2026",
     title: "Ready for the newest Android",
