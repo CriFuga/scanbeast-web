@@ -12,12 +12,12 @@
  */
 window.SCANBEAST_NEWS = [
   {
-    ver: "1.9.5",
+    ver: "1.9.6",
     date: "28 Jul 2026",
-    title: "Invite friends & clan chat notices",
+    title: "Invite friends & clan chat upgrades",
     items: [
       "Invite your friends: share your link, and when a friend installs and plays, you both earn coins.",
-      "Clan chat now announces when someone joins the clan, and the leader gets a heads-up when a new join request comes in.",
+      "Clan chat now announces when someone joins, and leaders choose who can post: everyone, leader and officers, or leader only.",
       "Bigger coin rewards from watching ads.",
       "More clan improvements and fixes."
     ],
