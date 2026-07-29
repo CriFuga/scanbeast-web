@@ -12,6 +12,18 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.1",
+    date: "29 Jul 2026",
+    title: "Trade cards & friendly clan duels",
+    items: [
+      "Trade cards directly with your clan members: offer a trade in the clan chat and seal the deal.",
+      "Challenge your clanmates to friendly duels, with no impact on the ranking — just train and have fun together.",
+      "Clan chat now announces when a member leaves or is kicked from the clan.",
+      "More clan improvements and stability fixes."
+    ],
+    tags: ["Clans", "Trading"]
+  },
+  {
     ver: "1.9.8",
     date: "28 Jul 2026",
     title: "Invite friends & clan chat tools",
