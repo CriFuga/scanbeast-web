@@ -12,6 +12,18 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "Launch",
+    date: "01 Aug 2026",
+    title: "ScanBeast is out — now on Google Play!",
+    items: [
+      "ScanBeast has left beta: the game is now live for everyone on the Google Play Store — download it free.",
+      "Scan real grocery barcodes, forge unique beasts from real nutrition, evolve them and duel friends live or online.",
+      "Clans, card trading, Season Pass, global leaderboard and 6 languages — all in.",
+      "Thank you to every beta tester who got us here. An iOS version is on the way."
+    ],
+    tags: ["Release", "Google Play"]
+  },
+  {
     ver: "2.0.1",
     date: "29 Jul 2026",
     title: "Trade cards & friendly clan duels",

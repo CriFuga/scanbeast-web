@@ -121,21 +121,39 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.15; mar
 }
 .btn-primary:hover { color: #1a0d02; box-shadow: 0 12px 34px rgba(255,107,26,.5); }
 
-/* Badge store */
-.stores { display: flex; flex-wrap: wrap; gap: 12px; }
-.store {
-  display: inline-flex; align-items: center; gap: 11px;
-  padding: 10px 18px; border-radius: 13px;
-  border: 1px solid var(--border); background: #141019; color: var(--cream);
-  min-width: 172px; transition: transform .12s ease, border-color .2s ease;
+/* Badge store ufficiali (Google Play + App Store) + perks + QR */
+.dl-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 34px; margin-top: 10px; }
+.dl-main { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; }
+.badge { position: relative; display: inline-flex; transition: transform .12s ease; }
+.badge img { height: 56px; width: auto; display: block; }
+a.badge:hover { transform: translateY(-2px); }
+.badge.soon { opacity: .55; filter: grayscale(.2); cursor: default; }
+.badge.soon .badge-tag {
+  position: absolute; top: -9px; right: -9px;
+  font-size: 10px; letter-spacing: .07em; text-transform: uppercase; font-weight: 700;
+  color: #1a0d02; background: linear-gradient(135deg, var(--gold), var(--primary));
+  padding: 2px 8px; border-radius: 999px; box-shadow: 0 4px 12px rgba(0,0,0,.35);
 }
-.store:hover { transform: translateY(-2px); color: var(--cream); border-color: rgba(255,107,26,.5); }
-.store svg { width: 24px; height: 24px; flex: none; }
-.store .txt { display: flex; flex-direction: column; line-height: 1.15; }
-.store .txt small { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--cream-faint); }
-.store .txt b { font-family: var(--serif); font-size: 17px; font-weight: 700; }
-.store.soon { opacity: .5; pointer-events: none; }
-.store.soon .badge-soon { margin-left: auto; font-family: var(--sans); font-size: 10px; letter-spacing: .1em; color: var(--gold); border: 1px solid rgba(255,204,0,.4); padding: 2px 7px; border-radius: 999px; }
+
+/* Perks: chip a pillola con icona */
+.dl-perks { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.dl-perks li {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--cream-dim);
+  background: var(--surface); border: 1px solid var(--border); padding: 8px 14px; border-radius: 999px;
+}
+.dl-perks svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.9; flex: none; }
+
+/* QR "scan to install": utile da desktop, nascosto su telefono (sei gia' li'). */
+.dl-qr { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.dl-qr img {
+  width: 128px; height: 128px; border-radius: 14px; padding: 9px; background: var(--cream);
+  border: 1px solid var(--border); box-shadow: 0 12px 30px rgba(0,0,0,.4);
+}
+.dl-qr span { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--cream-dim); }
+.dl-qr span svg { width: 15px; height: 15px; stroke: var(--accent); fill: none; stroke-width: 1.9; }
+@media (max-width: 640px) { .dl-qr { display: none; } }
 
 /* ---------- Sezioni ---------- */
 section { padding-block: clamp(56px, 9vw, 104px); }
@@ -459,6 +477,54 @@ section { padding-block: clamp(56px, 9vw, 104px); }
   .stat .bar > span { transition: none; }
 }
 
+/* ---------- Launch: banner, coriandoli, glow ---------- */
+/* Striscia festosa in cima: gradiente animato caldo, tutta cliccabile allo store. */
+.launch-banner {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 10px 18px; text-align: center; font-size: 14px; font-weight: 600;
+  color: #1a0d02;
+  background: linear-gradient(90deg, var(--gold), var(--primary), var(--crimson), var(--primary), var(--gold));
+  background-size: 300% 100%; animation: bannerShift 9s linear infinite;
+}
+.launch-banner:hover { color: #1a0d02; }
+.launch-banner b { font-weight: 800; }
+.launch-banner .lb-arrow { transition: transform .2s ease; }
+.launch-banner:hover .lb-arrow { transform: translateX(4px); }
+@keyframes bannerShift { from { background-position: 0 0; } to { background-position: 300% 0; } }
+
+/* Bottone store: leggermente piu' grande, pulsazione calda per attirare il tap. */
+.btn-lg { padding: 15px 26px; font-size: 16px; }
+.btn .gp-ico { width: 18px; height: 18px; }
+.btn-glow { animation: btnGlow 2.2s ease-in-out infinite; }
+@keyframes btnGlow {
+  0%, 100% { box-shadow: 0 8px 26px rgba(255,107,26,.35); }
+  50%      { box-shadow: 0 10px 32px rgba(255,107,26,.6), 0 0 0 4px rgba(255,204,0,.18); }
+}
+
+/* Pill "Out now" nell'hero: bordo oro pulsante. */
+.hero-copy .eyebrow-live { animation: livePulse 2.6s ease-in-out infinite; }
+@keyframes livePulse {
+  0%, 100% { border-color: rgba(255,204,0,.25); box-shadow: none; }
+  50%      { border-color: rgba(255,204,0,.7); box-shadow: 0 0 18px rgba(255,204,0,.22); }
+}
+
+/* Coriandoli: burst una-tantum al load, pezzi generati da app.js. */
+.confetti { position: fixed; inset: 0; z-index: 60; pointer-events: none; overflow: hidden; }
+.confetti i {
+  position: absolute; top: -16px; width: 9px; height: 14px; opacity: 0;
+  animation-name: confettiFall; animation-timing-function: cubic-bezier(.25,.6,.4,1); animation-fill-mode: forwards;
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-16px) translateX(0) rotate(0); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translateY(102vh) translateX(var(--drift, 0)) rotate(var(--rot, 200deg)); opacity: 0; }
+}
+
+/* Chi preferisce meno movimento: niente banner/glow/coriandoli animati. */
+@media (prefers-reduced-motion: reduce) {
+  .launch-banner, .btn-glow, .hero-copy .eyebrow-live { animation: none; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .hero .container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
@@ -483,7 +549,8 @@ section { padding-block: clamp(56px, 9vw, 104px); }
 @media (max-width: 520px) {
   .header-cta { display: none; }
   .nav-toggle { margin-left: auto; }
-  .store { min-width: 100%; }
+  .badges { flex-direction: column; }
+  .badge img { height: 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

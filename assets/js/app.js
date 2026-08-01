@@ -334,6 +334,34 @@
     });
   }
 
+  /* ---------- Coriandoli di lancio (una-tantum al load) ---------- */
+  function initConfetti() {
+    if (prefersReduced) return;             // niente animazioni se l'utente le riduce
+    if (!document.querySelector(".hero")) return;   // solo sulla home
+
+    var layer = document.createElement("div");
+    layer.className = "confetti";
+    layer.setAttribute("aria-hidden", "true");
+
+    var colors = ["#ffcc00", "#ff6b1a", "#e8003a", "#00b4d8", "#84cc16", "#fff5e8"];
+    var N = 90;
+    for (var i = 0; i < N; i++) {
+      var p = document.createElement("i");
+      p.style.left = (Math.random() * 100) + "%";
+      p.style.background = colors[Math.floor(Math.random() * colors.length)];
+      p.style.animationDelay = (Math.random() * 2.2) + "s";
+      p.style.animationDuration = (2.6 + Math.random() * 2.4) + "s";
+      p.style.setProperty("--rot", (Math.random() * 540 - 270) + "deg");
+      p.style.setProperty("--drift", (Math.random() * 160 - 80) + "px");
+      if (Math.random() < 0.5) p.style.borderRadius = "50%";   // meta' coriandoli tondi
+      layer.appendChild(p);
+    }
+
+    document.body.appendChild(layer);
+    // Rimuove il layer dopo l'ultima caduta (delay max ~2.2s + durata max ~5s).
+    window.setTimeout(function () { layer.remove(); }, 8000);
+  }
+
   function boot() {
     initReveal();
     initNav();
@@ -342,6 +370,7 @@
     initScan();
     initPhone();
     initLightbox();
+    initConfetti();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
