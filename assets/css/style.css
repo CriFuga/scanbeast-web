@@ -167,6 +167,9 @@ section { padding-block: clamp(56px, 9vw, 104px); }
 .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr .85fr; gap: 52px; align-items: center; }
 /* Canvas braci: dietro il contenuto, non intercetta i click */
 .embers { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.pp-badge { display: inline-block; margin-bottom: 20px; line-height: 0; opacity: .95; transition: opacity .2s ease, transform .2s ease; }
+.pp-badge:hover { opacity: 1; transform: translateY(-1px); }
+.pp-badge img { max-width: 100%; height: auto; }
 .hero-copy .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); background: rgba(255,204,0,.08); border: 1px solid rgba(255,204,0,.25); padding: 6px 14px; border-radius: 999px; margin-bottom: 22px; }
 .hero h1 {
   font-size: clamp(40px, 7vw, 68px);
