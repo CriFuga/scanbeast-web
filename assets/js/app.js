@@ -278,12 +278,17 @@
     if (!phone) return;
     var first = phone.querySelector(".phone-shot");
     if (!first) return;
-    var shots = ["shot-1", "shot-2", "shot-5", "shot-4", "shot-6", "shot-3"];
+    // Ordine del crossfade: home, battaglia, bestiario, classifica, clan, pass.
+    // La query di versione va tenuta uguale a quella degli <img> in index.html,
+    // altrimenti il browser ricicla dalla cache gli screenshot della release
+    // precedente (i numeri restano, il contenuto no).
+    var shots = ["shot-1", "shot-3", "shot-2", "shot-5", "shot-6", "shot-4"];
+    var shotsVer = "2.0.22";
     var layers = [first];
     for (var i = 1; i < shots.length; i++) {
       var img = document.createElement("img");
       img.className = "phone-shot";
-      img.src = "assets/img/" + shots[i] + ".webp";
+      img.src = "assets/img/" + shots[i] + ".webp?v=" + shotsVer;
       img.alt = ""; img.loading = "lazy"; img.width = 720; img.height = 1600;
       phone.appendChild(img);
       layers.push(img);
