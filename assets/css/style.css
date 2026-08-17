@@ -227,18 +227,30 @@ section { padding-block: clamp(56px, 9vw, 104px); }
 .feature.el-earth .ico svg { stroke: var(--earth); }
 
 /* ---------- Gallery ---------- */
+/* Carosello a colonne: la fascia e' piu' stretta della pagina (aria a destra e
+   sinistra) e la larghezza dello shot si ricava da --cols, cosi' ne entrano
+   esattamente 3 da desktop, 2 da tablet e 1 da telefono. */
 .gallery {
-  display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
-  padding: 8px 20px 24px; margin-inline: calc(-1 * 20px);
+  --gap: 18px;
+  --cols: 1;
+  display: flex; gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory;
+  width: 100%; max-width: 880px; margin-inline: auto;
+  padding: 8px 20px 24px; scroll-padding-inline: 20px;
   scrollbar-width: thin; scrollbar-color: var(--primary) transparent;
 }
 .gallery::-webkit-scrollbar { height: 8px; }
 .gallery::-webkit-scrollbar-thumb { background: rgba(255,107,26,.5); border-radius: 999px; }
 .gallery img {
-  width: clamp(190px, 58vw, 250px); flex: none; border-radius: 22px;
+  width: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+  flex: none; border-radius: 22px;
   border: 1px solid var(--border); scroll-snap-align: center;
   box-shadow: 0 16px 40px rgba(0,0,0,.5);
 }
+/* Su telefono lo shot a piena colonna sarebbe alto ~740px: tetto a 62vw, cosi'
+   se ne vede uno per volta con l'accenno dei vicini che invita a scorrere. */
+@media (max-width: 640px) { .gallery img { max-width: 62vw; } }
+@media (min-width: 641px) { .gallery { --cols: 2; } }
+@media (min-width: 861px) { .gallery { --cols: 3; } }
 
 /* ---------- CTA band ---------- */
 .cta-band { text-align: center; }
