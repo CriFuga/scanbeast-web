@@ -12,6 +12,138 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.22",
+    date: "17 Aug 2026",
+    title: "Leaderboard rows, finally readable",
+    items: [
+      "On the leaderboard the clan now has a line of its own under the name, so long clan names read in full even in the top spots.",
+      "Leaderboard cards are taller and all the same height, clan or no clan."
+    ],
+    tags: ["Leaderboard", "Polish"]
+  },
+  {
+    ver: "2.0.21",
+    date: "17 Aug 2026",
+    title: "Duels go fully online",
+    items: [
+      "Duels between nearby phones (local WiFi and Bluetooth) have been removed. Friend challenges, clan friendlies and random matchmaking all stay — online.",
+      "The app no longer asks for Bluetooth and location permissions.",
+      "Fixed the \"no connection\" notice that flashed at startup even with a working network.",
+      "On the leaderboard the clan name is no longer cut off in the top spots."
+    ],
+    tags: ["Duels", "Permissions", "Fixes"]
+  },
+  {
+    ver: "2.0.19",
+    date: "17 Aug 2026",
+    title: "Chat day separators & connection warning",
+    items: [
+      "Clan chat now separates the days — \"Today\", \"Yesterday\" or the date — so you can see at a glance when each message arrived.",
+      "ScanBeast now warns you when there is no connection: the game is fully online and needs WiFi or mobile data to play."
+    ],
+    tags: ["Clans", "Chat"]
+  },
+  {
+    ver: "2.0.18",
+    date: "17 Aug 2026",
+    title: "One profile card, unique names",
+    items: [
+      "New profile card with level, rank, XP, captures and wins — it opens from the leaderboard, from friends and from the clan.",
+      "A language flag sits next to the name, with the clan right below it.",
+      "Names are now unique: you can no longer take someone else's.",
+      "Change your name and everyone sees it, clan chat included.",
+      "In the clan, players who are already your friends show \"Message\" instead of \"Add\"."
+    ],
+    tags: ["Profile", "Social"]
+  },
+  {
+    ver: "2.0.17",
+    date: "16 Aug 2026",
+    title: "Mentions that actually reach you",
+    items: [
+      "Mentions with @ in clan chat now notify you even when the app is closed.",
+      "The clan friendly result always lands in the chat, instead of showing up now and then.",
+      "Opening the clan no longer flashes \"no messages\" over a chat full of them.",
+      "Direct messages open on the latest message, and it stays in view when the keyboard opens.",
+      "Fixed the turn animation in battle."
+    ],
+    tags: ["Notifications", "Chat", "Fixes"]
+  },
+  {
+    ver: "2.0.16",
+    date: "16 Aug 2026",
+    title: "Clan chat unblocked",
+    items: [
+      "Clan chat fixed: messages send again, both with the send button and the keyboard Enter key.",
+      "Mentions with @ now work — tap the member in the list and the name goes into the message.",
+      "On Samsung phones the send button lights up as you type, not only after a space.",
+      "In direct messages a quoted reply no longer spills out of the bubble.",
+      "The clan friendly result no longer goes missing from the chat."
+    ],
+    tags: ["Chat", "Fixes"]
+  },
+  {
+    ver: "2.0.15",
+    date: "16 Aug 2026",
+    title: "Friendly duels, for real this time",
+    items: [
+      "Clan friendly duels now work: the challenger drops into the battle as soon as someone accepts, and one tap goes back to the clan at the end.",
+      "Decline a challenge and the sender is no longer stuck waiting.",
+      "The result is a card with both fighters and the winner.",
+      "Reply to a message: swipe the bubble or hold it, in clan chat and in direct messages.",
+      "Mentions with @, a player menu in the clan info, and fixed sending on tablets."
+    ],
+    tags: ["Clans", "Duels", "Chat"]
+  },
+  {
+    ver: "2.0.13",
+    date: "16 Aug 2026",
+    title: "Reply, mention, tap a member",
+    items: [
+      "Clan friendly duels: whoever posts the challenge drops into the battle as soon as someone accepts, and the result lands in the clan chat.",
+      "Reply to a message — swipe the bubble sideways or hold it, in clan chat and direct messages.",
+      "Mentions with @: pick a clan member and only they get notified.",
+      "Tap a member in the clan info for their profile, a friend request or a direct message.",
+      "Fixed sending on tablets and widened the language filter."
+    ],
+    tags: ["Chat", "Clans"]
+  },
+  {
+    ver: "2.0.12",
+    date: "16 Aug 2026",
+    title: "Three captures a day & shop reveal",
+    items: [
+      "The same food now counts up to three times a day, so re-scanning your favourite product keeps feeding its evolution.",
+      "Every shop purchase asks for a confirmation and ends in a reveal popup showing what you got — with a \"don't ask again\" option.",
+      "The keyboard opens on the first tap in every chat and input field, not the second.",
+      "Clan chat opens on the latest message, and the clan badge no longer lights up with no pending requests.",
+      "Wider profanity filter across all 6 languages."
+    ],
+    tags: ["Capture", "Shop", "Fixes"]
+  },
+  {
+    ver: "2.0.11",
+    date: "16 Aug 2026",
+    title: "Real Nutri-Score grades & working DMs",
+    items: [
+      "Beasts from products with no official Nutri-Score no longer end up as the worst grade: they now get a fair, consistent one, and older cards are corrected on sight.",
+      "The first message from a new contact shows up in your Messages list instead of an empty screen.",
+      "Incoming direct messages raise an in-app alert while you're playing.",
+      "Push notifications no longer go silently dead after a while.",
+      "Water and other near-zero-calorie products no longer produce absurd HP."
+    ],
+    tags: ["Health", "Messages", "Fixes"]
+  },
+  {
+    ver: "2.0.10",
+    date: "03 Aug 2026",
+    title: "Mystery beasts in your language",
+    items: [
+      "Mystery beast names are now translated in battle, in the lore and in trade notices — not only in the bestiary."
+    ],
+    tags: ["Languages"]
+  },
+  {
     ver: "Launch",
     date: "01 Aug 2026",
     title: "ScanBeast is out — now on Google Play!",
@@ -22,6 +154,83 @@ window.SCANBEAST_NEWS = [
       "Thank you to every beta tester who got us here. An iOS version is on the way."
     ],
     tags: ["Release", "Google Play"]
+  },
+  {
+    ver: "2.0.9",
+    date: "01 Aug 2026",
+    title: "Display fit on notch phones",
+    items: [
+      "Fixed doubled-up padding that could push the interface off-centre on phones with a notch or punch-hole."
+    ],
+    tags: ["Display", "Fixes"]
+  },
+  {
+    ver: "2.0.8",
+    date: "01 Aug 2026",
+    title: "16 MB lighter",
+    items: [
+      "Music now plays through Android's own media engine: the app is around 16 MB smaller and quicker to install."
+    ],
+    tags: ["Performance", "Size"]
+  },
+  {
+    ver: "2.0.7",
+    date: "01 Aug 2026",
+    title: "Ready for the newest Android devices",
+    items: [
+      "Rebuilt for the 16 KB memory page size the latest Android phones require, so ScanBeast stays installable and stable on them."
+    ],
+    tags: ["Compatibility"]
+  },
+  {
+    ver: "2.0.6",
+    date: "01 Aug 2026",
+    title: "Cleaner chats",
+    items: [
+      "Bad language is masked in clan chat and direct messages, in all 6 languages, on both sides of the conversation."
+    ],
+    tags: ["Moderation", "Chat"]
+  },
+  {
+    ver: "2.0.5",
+    date: "30 Jul 2026",
+    title: "Smoother clan trades",
+    items: [
+      "Accepting a clan trade now opens straight into the trade room with the offered card already on the table."
+    ],
+    tags: ["Clans", "Trading"]
+  },
+  {
+    ver: "2.0.4",
+    date: "30 Jul 2026",
+    title: "Offer cards restyled",
+    items: [
+      "Clan trade and duel offers are now proper cards in the chat: clear title, icon badge and a single button to jump in.",
+      "Friendly duel offers are labelled \"friendly · no ranking\", so nobody joins one by mistake."
+    ],
+    tags: ["Clans", "UI"]
+  },
+  {
+    ver: "2.0.3",
+    date: "29 Jul 2026",
+    title: "Friendly duels fixed",
+    items: [
+      "Clan friendly duels start correctly again — they had been broken since the feature shipped.",
+      "Post a trade offer and your card goes on the table automatically: only the other side has to pick.",
+      "Trade and duel offers moved into the chat flow, newest last, instead of a fixed strip pinned at the top."
+    ],
+    tags: ["Clans", "Duels", "Fixes"]
+  },
+  {
+    ver: "2.0.2",
+    date: "29 Jul 2026",
+    title: "Post-launch fixes",
+    items: [
+      "The What's New carousel shows in your language instead of falling back to Italian.",
+      "The \"found your first clan\" hint no longer flashes at players who already have one.",
+      "Post a trade or duel offer in clan chat and you now see your own banner, with a Cancel button."
+    ],
+    tags: ["Fixes", "Clans"]
   },
   {
     ver: "2.0.1",
