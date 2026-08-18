@@ -12,6 +12,27 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.27",
+    date: "18 Aug 2026",
+    title: "Clan chat polish",
+    items: [
+      "A jump-to-bottom button appears in the clan chat when you have scrolled up, so you can return to the latest message in one tap.",
+      "Fixed the chat jumping to the top while you were typing or deleting a message.",
+      "After a clan friendly battle, the result card now always shows up in chat, even if you entered the fight by reopening the app."
+    ],
+    tags: ["Clans", "Fixes"]
+  },
+  {
+    ver: "2.0.26",
+    date: "18 Aug 2026",
+    title: "Bigger clan chat box",
+    items: [
+      "The clan chat input is bigger and grows as you type, so you can see what you are writing, and the chat now stays on the latest message.",
+      "Clan friendly challenge: it now starts correctly even if you fully close the app after sending it, instead of breaking when your opponent accepts."
+    ],
+    tags: ["Clans", "Chat"]
+  },
+  {
     ver: "2.0.25",
     date: "18 Aug 2026",
     title: "Clan challenge, no more broken start",
