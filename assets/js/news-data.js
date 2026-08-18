@@ -12,15 +12,15 @@
  */
 window.SCANBEAST_NEWS = [
   {
-    ver: "2.0.27",
+    ver: "2.0.28",
     date: "18 Aug 2026",
-    title: "Clan chat polish",
+    title: "Creator badge and clan chat polish",
     items: [
+      "The game creator is now recognisable everywhere — a gold name between two stars, on the leaderboard, in clans, in messages and on the profile.",
       "A jump-to-bottom button appears in the clan chat when you have scrolled up, so you can return to the latest message in one tap.",
-      "Fixed the chat jumping to the top while you were typing or deleting a message.",
-      "After a clan friendly battle, the result card now always shows up in chat, even if you entered the fight by reopening the app."
+      "Fixed the chat jumping to the top while typing or deleting, and the clan friendly result card now always shows up in chat even after reopening the app."
     ],
-    tags: ["Clans", "Fixes"]
+    tags: ["Creator", "Clans"]
   },
   {
     ver: "2.0.26",
