@@ -12,6 +12,39 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.25",
+    date: "18 Aug 2026",
+    title: "Clan challenge, no more broken start",
+    items: [
+      "If you send a clan friendly challenge, then close and reopen the app before your opponent accepts, the match now starts correctly instead of breaking and dropping you back home."
+    ],
+    tags: ["Clans", "Fixes"]
+  },
+  {
+    ver: "2.0.24",
+    date: "18 Aug 2026",
+    title: "Fair duel endings",
+    items: [
+      "Fixed a false \"win by forfeit\": whoever lost an online duel could be handed the win while the opponent had actually won.",
+      "The result screen now spells out the reason under Victory and Defeat.",
+      "Accepting a challenge gives you 30 seconds to pick your beast, with a countdown — no more getting stuck on that screen.",
+      "If the room is already gone you leave in a few seconds instead of waiting."
+    ],
+    tags: ["Duels", "Fixes"]
+  },
+  {
+    ver: "2.0.23",
+    date: "18 Aug 2026",
+    title: "Matchmaking, clans and a new language picker",
+    items: [
+      "After an online duel you are no longer dragged into your opponent's next match, and looking for a new challenger will not pick the player you just faced.",
+      "The wait for a challenge drops from 90 to 30 seconds, with a countdown, and the invite no longer stays stuck for the sender.",
+      "Friends are recognised right away on the leaderboard, and clan member levels are finally up to date.",
+      "Redesigned language picker, with flags."
+    ],
+    tags: ["Duels", "Clans", "Polish"]
+  },
+  {
     ver: "2.0.22",
     date: "17 Aug 2026",
     title: "Leaderboard rows, finally readable",
