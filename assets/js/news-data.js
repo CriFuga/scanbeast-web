@@ -12,6 +12,29 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.35",
+    date: "19 Aug 2026",
+    title: "Rarity finally counts in battle",
+    items: [
+      "Beast cards now show the battle stats — HP, attack and defense — right next to the nutritional values, so the numbers you fight with are no longer a mystery.",
+      "Rarity affects combat at last: rare beasts hit harder and take more punishment against the AI, and attack is rebalanced over a wider range so beasts feel different from each other.",
+      "Private chat: press and hold a message to reply, report or delete it. Reporting is offered on incoming messages, deleting on your own.",
+      "Notification banners stay on screen for at least four seconds, and the X closes them straight away."
+    ],
+    tags: ["Battle", "Cards", "Chat"]
+  },
+  {
+    ver: "2.0.33",
+    date: "19 Aug 2026",
+    title: "Duel preview, instant clan chat",
+    items: [
+      "Online duels open with a versus preview of the two beasts, and the battle HUD shows what each side is bringing to the fight.",
+      "The clan chat is loaded in the background at startup, so it opens on the latest messages instead of staying empty for a couple of seconds.",
+      "Long beast names stay inside the card in the duel preview, and the leaderboard profile popup shows total XP with the player name centred."
+    ],
+    tags: ["Duels", "Clans"]
+  },
+  {
     ver: "2.0.30",
     date: "19 Aug 2026",
     title: "Messages from the creator",
