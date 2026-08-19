@@ -12,6 +12,16 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.30",
+    date: "19 Aug 2026",
+    title: "Messages from the creator",
+    items: [
+      "ScanBeast can now deliver special messages — and rewards — straight from the game's creator, shown in a dedicated in-app popup.",
+      "The top players on the leaderboard are the first to be thanked, with a coin and essence reward."
+    ],
+    tags: ["Community", "Rewards"]
+  },
+  {
     ver: "2.0.29",
     date: "19 Aug 2026",
     title: "Creator badge fix",
