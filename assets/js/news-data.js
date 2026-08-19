@@ -12,6 +12,15 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.29",
+    date: "19 Aug 2026",
+    title: "Creator badge fix",
+    items: [
+      "Fixed the game creator badge so the second star stays next to the name instead of jumping to the end of the line — in the clan member list, the leaderboard and private messages."
+    ],
+    tags: ["Creator", "Fix"]
+  },
+  {
     ver: "2.0.28",
     date: "18 Aug 2026",
     title: "Creator badge and clan chat polish",
