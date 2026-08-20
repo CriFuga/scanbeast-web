@@ -12,6 +12,27 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.37",
+    date: "20 Aug 2026",
+    title: "The Rock Shield holds again",
+    items: [
+      "Air already beats Earth, and its Gust skill ignored defense completely — including the Rock Shield, the one thing an Earth beast does. Shield up or not, the damage was the same.",
+      "Gust still pierces the parry and the passive evolution defense, but the shield now cuts a third of it. It stays the answer to turtling without erasing an entire element.",
+      "Fixed the rarity tag spilling out of its border in the bestiary after sorting the list."
+    ],
+    tags: ["Battle", "Balance"]
+  },
+  {
+    ver: "2.0.36",
+    date: "20 Aug 2026",
+    title: "Search and sort in the bestiary",
+    items: [
+      "A search bar finds a beast by name instead of scrolling the whole collection, and the button beside it opens sorting by HP, attack or speed plus a rarity filter.",
+      "Search and filters work together: search with the Epic filter on and it stays on. A dot on the button marks active filters, and an empty list clears them in one tap."
+    ],
+    tags: ["Bestiary", "Quality of life"]
+  },
+  {
     ver: "2.0.35",
     date: "19 Aug 2026",
     title: "Rarity finally counts in battle",
