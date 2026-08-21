@@ -12,6 +12,17 @@
  */
 window.SCANBEAST_NEWS = [
   {
+    ver: "2.0.38",
+    date: "21 Aug 2026",
+    title: "Favourite beasts, clearer icons",
+    items: [
+      "Open a beast card and tap the heart at the top right: that beast stays on top of the lists, both in the bestiary for its element and in the card picker when a battle starts. The filter panel can also show favourites only.",
+      "One symbol, one meaning: coins now use a money bag, experience points take the star, and the bolt stands only for the daily login streak. A player asked what the bolt in the daily reward meant, and he was right to — it was doing two jobs at once.",
+      "Updating players get a short walkthrough that points to where favourites are marked."
+    ],
+    tags: ["Bestiary", "Quality of life"]
+  },
+  {
     ver: "2.0.37",
     date: "20 Aug 2026",
     title: "The Rock Shield holds again",
